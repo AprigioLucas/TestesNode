@@ -7,16 +7,19 @@ import {
 import {
   registerForEvent
 } from "./chunk-25H3MUMX.mjs";
+import "./chunk-KDMJHR3Z.mjs";
 import {
   errorHandler
 } from "./chunk-VDC5B7VK.mjs";
-import "./chunk-KDMJHR3Z.mjs";
 import {
   checkIn
 } from "./chunk-CXRWONHO.mjs";
 import {
   getAttendeeBadge
 } from "./chunk-52DC6QCP.mjs";
+import {
+  getAttendeeData
+} from "./chunk-CIWA63KN.mjs";
 import {
   getEventAttendees
 } from "./chunk-D6I2UMA4.mjs";
@@ -61,6 +64,7 @@ app.register(getEvents);
 app.register(getAttendeeBadge);
 app.register(checkIn);
 app.register(getEventAttendees);
+app.register(getAttendeeData);
 app.setErrorHandler(errorHandler);
 app.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
   console.log("HTTP server running");

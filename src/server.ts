@@ -11,6 +11,7 @@ import { checkIn } from "./routes/check-in";
 import { getEventAttendees } from "./routes/get-event-attendees";
 import { errorHandler } from "./error-handler";
 import { getEvents } from "./routes/get-events";
+import { getAttendeeData } from "./routes/get-attendee-data";
 
 const app = fastify()
 
@@ -46,7 +47,7 @@ app.register(getEvents)
 app.register(getAttendeeBadge)
 app.register(checkIn)
 app.register(getEventAttendees)
-
+app.register(getAttendeeData)
 app.setErrorHandler(errorHandler)
 
 app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
