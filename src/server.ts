@@ -15,6 +15,7 @@ import { updateAttendeeData } from "./routes/put-attendee-data";
 
 import { getAttendeeBadge } from "./routes/get-attendee-badge";
 import { checkIn } from "./routes/check-in";
+import { deleteEvent } from "./routes/delete-event";
 
 const app = fastify()
 app.register(fastifyCors, {
@@ -52,6 +53,7 @@ app.register(getEventAttendees)
 app.register(getAttendeeData)
 app.register(updateAttendeeData)
 app.register(updateEventData)
+app.register(deleteEvent)
 
 app.setErrorHandler(errorHandler)
 
