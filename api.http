@@ -9,7 +9,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3333/events/8780bb3f-ca0b-4539-9cf6-e361fde0622e/attendees
+POST http://localhost:3333/events/6ad24555-94bc-4f45-9144-929f535d96ca/attendees
 content-type: application/json
 
 {
