@@ -1,4 +1,13 @@
 import {
+  getEventAttendees
+} from "./chunk-D6I2UMA4.mjs";
+import {
+  getEvent
+} from "./chunk-OUCNKKKU.mjs";
+import {
+  getEvents
+} from "./chunk-IHOK3UIN.mjs";
+import {
   createEvent
 } from "./chunk-QLGKTO5H.mjs";
 import {
@@ -9,7 +18,7 @@ import {
 } from "./chunk-FWNCKR7V.mjs";
 import {
   updateEventData
-} from "./chunk-75GUIWBC.mjs";
+} from "./chunk-NTRFIVRJ.mjs";
 import "./chunk-KDMJHR3Z.mjs";
 import {
   errorHandler
@@ -18,21 +27,18 @@ import {
   checkIn
 } from "./chunk-CXRWONHO.mjs";
 import {
+  deleteAttendee
+} from "./chunk-GN7U3365.mjs";
+import {
+  deleteEvent
+} from "./chunk-DM6K5TT7.mjs";
+import {
   getAttendeeBadge
 } from "./chunk-52DC6QCP.mjs";
 import {
   getAttendeeData
 } from "./chunk-CIWA63KN.mjs";
-import {
-  getEventAttendees
-} from "./chunk-D6I2UMA4.mjs";
-import {
-  getEvent
-} from "./chunk-OUCNKKKU.mjs";
 import "./chunk-JRO4E4TH.mjs";
-import {
-  getEvents
-} from "./chunk-IHOK3UIN.mjs";
 import "./chunk-JV6GRE7Y.mjs";
 
 // src/server.ts
@@ -53,7 +59,7 @@ app.register(fastifySwagger, {
     info: {
       title: "pass-in",
       description: "Specifications of API to back-end from application pass.in made on nlw",
-      version: "1.0.0"
+      version: "1.1.0"
     }
   },
   transform: jsonSchemaTransform
@@ -73,6 +79,8 @@ app.register(getEventAttendees);
 app.register(getAttendeeData);
 app.register(updateAttendeeData);
 app.register(updateEventData);
+app.register(deleteEvent);
+app.register(deleteAttendee);
 app.setErrorHandler(errorHandler);
 app.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
   console.log("HTTP server running");

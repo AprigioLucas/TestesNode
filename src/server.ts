@@ -16,8 +16,10 @@ import { updateAttendeeData } from "./routes/put-attendee-data";
 import { getAttendeeBadge } from "./routes/get-attendee-badge";
 import { checkIn } from "./routes/check-in";
 import { deleteEvent } from "./routes/delete-event";
+import { deleteAttendee } from "./routes/delete-attendee";
 
 const app = fastify()
+
 app.register(fastifyCors, {
     origin: '*',
     //apenas para desenvolvimento fica assim -  deveria ser com 'http://meufrontend.com'
@@ -30,7 +32,7 @@ app.register(fastifySwagger, {
         info: {
             title: "pass-in",
             description: "Specifications of API to back-end from application pass.in made on nlw",
-            version: "1.0.0"
+            version: "1.1.0"
         }
     },
     transform: jsonSchemaTransform,
@@ -54,7 +56,7 @@ app.register(getAttendeeData)
 app.register(updateAttendeeData)
 app.register(updateEventData)
 app.register(deleteEvent)
-
+app.register(deleteAttendee)
 app.setErrorHandler(errorHandler)
 
 app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
